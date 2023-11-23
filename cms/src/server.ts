@@ -6,7 +6,7 @@ require('dotenv').config();
 const app = express();
 
 const corsOptions = {
-  origin: 'http://localhost:5173', // sesuai dengan domain client
+  origin: 'http://localhost:3000', // sesuai dengan domain client
   optionsSuccessStatus: 200,
   credentials: true,
 };
@@ -28,7 +28,7 @@ const start = async () => {
 
   // Add your own express routes here
 
-  app.listen(3000);
+  app.listen(3069);
 };
 
 start();
