@@ -4,7 +4,7 @@
       <div class="mx-auto max-w-2xl lg:mx-0">
         <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">About Us</h2>
         <p class="mt-2 text-lg leading-8 text-gray-600">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis mauris ac quam semper hendrerit. Fusce semper mauris eu enim mollis, eu tincidunt enim semper. Sed semper eros ac quam vulputate, vel fringilla quam molestie. Nullam sed lectus eget nulla sagittis semper.
+          Kami kelompok 13 praktikum pemrograman web merupakan tim yang terdiri dari tiga anggota yang memiliki semangat dan aktif dalam mengerjakan penugasan, yaitu Steven Vigo, Hafiz Akmaldi Santosa, dan Rizki Ramadhani. Kebersamaan dalam kelompok ini tercermin dalam semangat tinggi yang kita bawa setiap kali melibatkan diri dalam penugasan praktikum. kami tidak hanya berkomitmen pada keberhasilan individu, tetapi juga berusaha mencapai tujuan bersama dengan saling mendukung.
         </p>
       </div>
       <div class="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
@@ -35,21 +35,21 @@ import { ref } from 'vue'
 const people = [
   {
     name: 'Steven Figo',
-    role: 'Back-end Developer',
+    role: '5027221021',
     imageUrl: 'https://picsum.photos/200',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper eros ac quam vulputate, vel fringilla quam molestie. Nullam sed lectus eget nulla sagittis semper.',
+    description: 'Hai!, saya Steven Figo dengan NRP 5027221021 Saya adalah individu yang antusias dan penuh semangat dalam menjalani perjalanan pemrograman web. ',
   },
   {
     name: 'Hafiz Akmaldi Santosa',
-    role: 'Front-end Developer',
+    role: '5027221061',
     imageUrl: 'https://picsum.photos/201',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed lectus eget nulla sagittis semper.',
+    description: 'Hallo!, Saya Hafiz Akmaldi Santosa, mahasiswa dengan NRP 5027221061 yang memiliki semangat tinggi untuk mengeksplorasi dunia pemrograman web. ',
   },
   {
     name: 'Rizki Ramadhani',
-    role: 'Full-stack Developer',
+    role: '5027221013',
     imageUrl: 'https://picsum.photos/202',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper eros ac quam vulputate, vel fringilla quam molestie. Nullam sed lectus eget nulla sagittis semper.',
+    description: 'Hai!, Saya Rizki Ramadhani, mahasiswa dengan NRP 5027221013 yang memiliki semangat untuk mengerjakan penugasan pemrograman web.',
   },
 ]
 </script>
