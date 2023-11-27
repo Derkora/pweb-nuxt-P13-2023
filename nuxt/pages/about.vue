@@ -1,27 +1,27 @@
 <template>
-  <div class="bg-white py-24 sm:py-32">
+  <div class="bg-blue-500 py-24 sm:py-32">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
       <div class="mx-auto max-w-2xl lg:mx-0">
-        <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">About Us</h2>
-        <p class="mt-2 text-lg leading-8 text-gray-600">
-          Kami kelompok 13 praktikum pemrograman web merupakan tim yang terdiri dari tiga anggota yang memiliki semangat dan aktif dalam mengerjakan penugasan, yaitu Steven Vigo, Hafiz Akmaldi Santosa, dan Rizki Ramadhani. Kebersamaan dalam kelompok ini tercermin dalam semangat tinggi yang kita bawa setiap kali melibatkan diri dalam penugasan praktikum. kami tidak hanya berkomitmen pada keberhasilan individu, tetapi juga berusaha mencapai tujuan bersama dengan saling mendukung.
+        <h2 class="text-white font-bold tracking-tight text-2xl sm:text-3xl">About Us</h2>
+        <p class="mt-2 text-white leading-8 text-sm">
+          Kami kelompok 13 praktikum pemrograman web merupakan tim yang terdiri dari tiga anggota yang memiliki semangat dan aktif dalam mengerjakan penugasan, yaitu Steven Figo, Hafiz Akmaldi Santosa, dan Rizki Ramadhani. Kebersamaan dalam kelompok ini tercermin dalam semangat tinggi yang kita bawa setiap kali melibatkan diri dalam penugasan praktikum. kami tidak hanya berkomitmen pada keberhasilan individu, tetapi juga berusaha mencapai tujuan bersama dengan saling mendukung.
         </p>
       </div>
-      <div class="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+      <div class="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-white pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
         <article v-for="person in people" :key="person.name" class="flex max-w-xl flex-col items-start justify-between">
-          <div class="flex items-center gap-x-4 text-xs">
-            <img :src="person.imageUrl" alt="" class="h-10 w-10 rounded-full bg-gray-50" />
+          <div class="flex items-center gap-x-4 text-white">
+            <img :src="person.imageUrl" alt="" class="h-10 w-10 rounded-full bg-blue-700" />
             <div class="text-sm leading-6">
-              <p class="font-semibold text-gray-900">
+              <p class="font-semibold text-white">
                 <a :href="person.href">
                   {{ person.name }}
                 </a>
               </p>
-              <p class="text-gray-600">{{ person.role }}</p>
+              <p class="text-white">{{ person.role }}</p>
             </div>
           </div>
           <div class="mt-5">
-            <p class="text-base font-semibold leading-6 text-gray-900">{{ person.description }}</p>
+            <p class="text-base font-semibold leading-6 text-white">{{ person.description }}</p>
           </div>
         </article>
       </div>
