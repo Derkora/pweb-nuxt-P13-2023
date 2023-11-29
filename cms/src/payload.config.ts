@@ -7,7 +7,7 @@ import { buildConfig } from 'payload/config'
 
 import Users from './collections/Users'
 import Blog from './collections/Blog'
-import Artikel from './collections/Artikel'
+import Author from './collections/Author'
 import Log from './collections/Log'
 import media from './collections/media'
 
@@ -20,7 +20,7 @@ export default buildConfig({
   collections: [
     Users, 
     Blog, 
-    Artikel,
+    Author,
     Log,
     media, 
   ],

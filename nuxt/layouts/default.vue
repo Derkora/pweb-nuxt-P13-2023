@@ -19,7 +19,6 @@
             <NuxtLink to="/artikelist"><a class="text-sm font-semibold leading-6 text-gray-900">Artikel</a></NuxtLink>
           </div>
           <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-            <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Buat artikel <span aria-hidden="true">&rarr;</span></a>
           </div>
         </nav>
         <Dialog as="div" class="lg:hidden" @close="mobileMenuOpen = false" :open="mobileMenuOpen">

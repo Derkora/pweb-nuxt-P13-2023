@@ -48,14 +48,36 @@ const Blog = {
         required: true,
       },
       {
+        name: 'date',
+        type: 'date',
+        required: true,
+        admin: {
+          date: {
+              pickerAppearance: 'dayOnly',
+              displayFormat: 'd MMM yyy',
+          },
+        },
+      },
+      {
+        name: 'writer',
+        type: 'relationship',
+        required: true,
+        relationTo: 'author',
+        filterOptions: ({ relationTo, siblingData }) => {
+          return {
+            division : { equals : 'content writer' }
+          }
+        }
+      },
+      {
         name: 'image', 
         type: 'upload', 
         relationTo: 'media',
         required: true,
       },
       {
-        name: 'isiBlog', 
-        type: 'textarea', 
+        name: "isiBlog", 
+        type: "textarea", 
         required: true,
       },
     ]

@@ -51,4 +51,46 @@
   
 <script setup>
   const data = new Date()
+    import { ref, onMounted } from 'vue';
+
+  const posts = ref([]);
+
+  const fetchData = async () => {
+    try {
+      const response = await fetch('http://localhost:3069/api/Blog', {
+        method: 'GET',
+        credentials: 'include',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const responseData = await response.json();
+      return responseData.docs; 
+
+    } catch (err) {
+      console.error(err);
+      throw err;
+    }
+  };
+
+  onMounted(async () => {
+    try {
+      const data = await fetchData();
+      posts.value = data;
+    } catch (error) {
+      console.error(error);
+      alert('Terjadi kesalahan saat mengambil data post.');
+    }
+  });
+
+  const formatDate = (dateString) => {
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    return new Date(dateString).toLocaleDateString(undefined, options);
+  };
+
 </script>
