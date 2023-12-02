@@ -16,7 +16,7 @@
           <div class="hidden lg:flex lg:gap-x-12">
             <NuxtLink to="/"><a class="text-sm font-semibold leading-6 text-gray-900">Beranda</a></NuxtLink>
             <NuxtLink to="/about"><a class="text-sm font-semibold leading-6 text-gray-900">Tentang Kami</a></NuxtLink>
-            <NuxtLink to="/artikelist"><a class="text-sm font-semibold leading-6 text-gray-900">Artikel</a></NuxtLink>
+            <NuxtLink to="/artikel"><a class="text-sm font-semibold leading-6 text-gray-900">Artikel</a></NuxtLink>
           </div>
           <div class="hidden lg:flex lg:flex-1 lg:justify-end">
           </div>
@@ -39,7 +39,7 @@
                 <div class="space-y-2 py-6">
                   <NuxtLink to="/"><a class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Beranda</a></NuxtLink>
                   <NuxtLink to="/about"><a class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Tentang Kami</a></NuxtLink>
-                  <NuxtLink to="artikelist"><a class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Artikel</a></NuxtLink>
+                  <NuxtLink to="artikel"><a class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Artikel</a></NuxtLink>
                 </div>
               </div>
             </div>

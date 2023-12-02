@@ -1,27 +1,27 @@
 <template>
-  <div class="bg-blue-500 py-24 sm:py-32">
+  <div class="bg-primary py-24 sm:py-32">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
       <div class="mx-auto max-w-2xl lg:mx-0">
-        <h2 class="text-white font-bold tracking-tight text-2xl sm:text-3xl">About Us</h2>
-        <p class="mt-2 text-white leading-8 text-sm">
+        <h2 class=" font-bold tracking-tight text-2xl sm:text-3xl">About Us</h2>
+        <p class="mt-2  leading-8 text-sm">
           Kami kelompok 13 praktikum pemrograman web merupakan tim yang terdiri dari tiga anggota yang memiliki semangat dan aktif dalam mengerjakan penugasan, yaitu Steven Figo, Hafiz Akmaldi Santosa, dan Rizki Ramadhani. Kebersamaan dalam kelompok ini tercermin dalam semangat tinggi yang kita bawa setiap kali melibatkan diri dalam penugasan praktikum. kami tidak hanya berkomitmen pada keberhasilan individu, tetapi juga berusaha mencapai tujuan bersama dengan saling mendukung.
         </p>
       </div>
       <div class="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-white pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
         <article v-for="person in people" :key="person.name" class="flex max-w-xl flex-col items-start justify-between">
-          <div class="flex items-center gap-x-4 text-white">
+          <div class="flex items-center gap-x-4 ">
             <img :src="person.imageUrl" alt="" class="h-10 w-10 rounded-full bg-blue-700" />
             <div class="text-sm leading-6">
-              <p class="font-semibold text-white">
+              <p class="font-semibold ">
                 <a :href="person.href">
                   {{ person.name }}
                 </a>
               </p>
-              <p class="text-white">{{ person.role }}</p>
+              <p class="">{{ person.role }}</p>
             </div>
           </div>
           <div class="mt-5">
-            <p class="text-base font-semibold leading-6 text-white">{{ person.description }}</p>
+            <p class="text-base font-semibold leading-6 ">{{ person.description }}</p>
           </div>
         </article>
       </div>
