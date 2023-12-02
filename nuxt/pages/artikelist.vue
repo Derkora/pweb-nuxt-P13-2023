@@ -1,6 +1,6 @@
 <template>
   <div>
-    <!-- Blog Seksion -->
+    <!-- Blog Section -->
     <div class="bg-white py-24 sm:py-32">
       <div class="mx-auto max-w-7xl px-6 lg:px-8">
         <div class="mx-auto max-w-2xl lg:mx-0">
@@ -11,14 +11,14 @@
             <div class="flex items-center gap-x-4 text-xs">
               <time :datetime="post.datetime" class="text-gray-500">{{ formatDate(post.date) }}</time>
             </div>
-            <NuxtLink to="/artikel">
+            <NuxtLink :to="'/artikel/' + post.title">
               <div class="group relative">
                 <h3 class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
                   <span class="absolute inset-0" />
                   {{ post.title }}
                 </h3>
                 <div>
-                  <img src="{{ post.image.url }}" alt="{{ post.image.alt }}" />
+                  <img src="https://pbs.twimg.com/media/D6uc2kBX4AAv3xV?format=jpg&name=900x900" alt="" />
                 </div>
                 <p class="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">{{ post.isiBlog }}</p>
               </div>
@@ -42,48 +42,72 @@
 </template>
 
 <script setup>
-  import { ref, onMounted } from 'vue';
+import { ref, onMounted } from 'vue';
 
-  const posts = ref([]);
+const posts = ref([]);
+const images = ref([]);
 
-  const fetchData = async () => {
-    try {
-      const response = await fetch('http://localhost:3069/api/Blog', {
-        method: 'GET',
-        credentials: 'include',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
+const fetchData = async () => {
+  try {
+    const response = await fetch('http://localhost:3069/api/Blog', {
+      method: 'GET',
+      credentials: 'include',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
 
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-
-      const responseData = await response.json();
-      return responseData.docs; 
-
-    } catch (err) {
-      console.error(err);
-      throw err;
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
     }
-  };
 
-  onMounted(async () => {
-    try {
-      const data = await fetchData();
-      posts.value = data;
-    } catch (error) {
-      console.error(error);
-      alert('Terjadi kesalahan saat mengambil data post.');
+    const responseData = await response.json();
+    posts.value = responseData.docs;
+  } catch (err) {
+    console.error(err);
+    throw err;
+  }
+};
+
+const fetchImages = async () => {
+  try {
+    const response = await fetch('http://localhost:3069/api/media', {
+      method: 'GET',
+      credentials: 'include',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
     }
-  });
 
-  const formatDate = (dateString) => {
-    const options = { year: 'numeric', month: 'long', day: 'numeric' };
-    return new Date(dateString).toLocaleDateString(undefined, options);
-  };
+    const responseData = await response.json();
+    images.value = responseData.docs;
+  } catch (err) {
+    console.error(err);
+    throw err;
+  }
+};
 
+const getImageUrl = (imageId) => {
+  const image = images.value.find((image) => image.id === imageId);
+  return image ? `http://localhost:3069/api/media/${image.id}` : '';
+};
+
+onMounted(async () => {
+  try {
+    await fetchData();
+    await fetchImages();
+  } catch (error) {
+    console.error(error);
+    alert('Terjadi kesalahan saat mengambil data post atau gambar.');
+  }
+});
+
+const formatDate = (dateString) => {
+  const options = { year: 'numeric', month: 'long', day: 'numeric' };
+  return new Date(dateString).toLocaleDateString(undefined, options);
+};
 </script>
-
-
