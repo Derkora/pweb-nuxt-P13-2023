@@ -45,7 +45,6 @@
   import { ref, onMounted } from 'vue';
   
   const posts = ref([]);
-  const images = ref([]);
   
   const fetchData = async () => {
     try {
@@ -68,29 +67,6 @@
       throw err;
     }
   };
-  
-  const fetchImages = async () => {
-    try {
-      const response = await fetch('http://localhost:3069/api/media', {
-        method: 'GET',
-        credentials: 'include',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
-  
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-  
-      const responseData = await response.json();
-      images.value = responseData.docs;
-    } catch (err) {
-      console.error(err);
-      throw err;
-    }
-  };
-
   
   onMounted(async () => {
     try {
